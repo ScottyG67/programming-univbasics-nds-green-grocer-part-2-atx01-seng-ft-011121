@@ -76,5 +76,5 @@ def checkout(cart, coupons)
   
   total = consolidated_with_disscounts_cart.sum { |item| item[:price]*item[:count]}
   binding.pry
-  
+  total
 end
