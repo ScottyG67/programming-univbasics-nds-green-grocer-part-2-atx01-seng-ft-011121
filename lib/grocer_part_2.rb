@@ -22,7 +22,7 @@ def apply_coupons(cart, coupons)
       coupon_item=line_item.clone
       binding.pry
       coupon_item[:item] = coupon_item[:item] + " W/COUPON"
-      coupon_item[:price] = saving[:price]/saving[:num]
+      coupon_item[:price] = saving[:cost]/saving[:num]
       binding.pry
       line_item[:count]=0
       binding.pry
