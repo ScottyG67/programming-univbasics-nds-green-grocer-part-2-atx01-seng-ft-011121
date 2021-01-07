@@ -16,7 +16,7 @@ def apply_coupons(cart, coupons)
   cart.each do |line_item|
 
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
-    if saving == []
+    if saving == nil
       binding.pry
     end
     binding.pry
