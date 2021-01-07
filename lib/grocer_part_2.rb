@@ -68,13 +68,13 @@ def checkout(cart, coupons)
   # some irritated customers
   
   consolidated_cart = consolidate_cart(cart)
-  binding.pry
+  #binding.pry
   coupons_applied = apply_coupons(consolidated_cart,coupons)
-  binding.pry
+  #binding.pry
   consolidated_with_disscounts_cart = apply_clearance(coupons_applied)
-  binding.pry
+  #binding.pry
   
   total = consolidated_with_disscounts_cart.sum { |item| item[:price]*item[:count]}
-  binding.pry
+  #binding.pry
   total
 end
