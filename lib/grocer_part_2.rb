@@ -66,15 +66,16 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
-  
+
   consolidated_cart = consolidate_cart(cart)
-  #binding.pry
+
   coupons_applied = apply_coupons(consolidated_cart,coupons)
-  #binding.pry
+
   consolidated_with_disscounts_cart = apply_clearance(coupons_applied)
-  #binding.pry
-  
+
   total = consolidated_with_disscounts_cart.sum { |item| item[:price]*item[:count]}
+  
+  #check if total is >100, if so apply 10% disscount
   if total > 100
     total=(total*0.9).round(2)
   end
