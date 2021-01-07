@@ -18,9 +18,13 @@ def apply_coupons(cart, coupons)
     if line_item[:count] % saving[:num] == 0
       #update line_item count = 0
       #add new hash to cart with :item + "W/COUPON" and new per unit price
+      binding.pry
       coupon_item=line_item.clone
+      binding.pry
       coupon_item[:name] = coupon_item[:name] + "W/COUPON"
+      binding.pry
       line_item[:count]=0
+      binding.pry
       cart << coupon_item
       binding.pry
       
