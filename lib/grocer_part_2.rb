@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
     #if cart meets number requirement for coupon
     if line_item[:count] = saving[:num]
       #update line_item count
-      #add new hash to cart with :item + "w"
+      #add new hash to cart with :item + "W/COUPON" and new per unit price
       elsif line_item[:count] > saving[:num]
       #
     
