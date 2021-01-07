@@ -6,10 +6,9 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   
   require 'pry'
-  cart_w_coupon=[]
-  remainder_item={}
-  coupon_item={}
-  #binding.pry
+
+  #coupon_item={}
+
   if coupons != []
     
     cart.each do |line_item|
