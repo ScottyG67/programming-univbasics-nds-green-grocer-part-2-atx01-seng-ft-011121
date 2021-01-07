@@ -67,6 +67,11 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
-  consolidate_cart
+  consolidated_cart = consolidate_cart(cart)
+  binding.pry
+  coupons_applied = apply_coupons(consolidate_cart,coupons)
+  binding.pry
+  consolidated_with_disscounts_cart = apply_clearance(coupons_applied)
+  binding.pry
   
 end
