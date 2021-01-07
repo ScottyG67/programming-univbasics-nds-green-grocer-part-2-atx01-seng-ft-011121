@@ -28,9 +28,7 @@ def apply_coupons(cart, coupons)
           coupon_item=line_item.clone
           coupon_item[:item] = coupon_item[:item] + " W/COUPON"
           coupon_item[:price] = saving[:cost]/saving[:num]
-  
           coupon_item[:count]=line_item[:count]/saving[:num]*saving[:num]
-  
           line_item[:count]=line_item[:count]-coupon_item[:count]
           cart << coupon_item
 
