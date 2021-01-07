@@ -9,9 +9,8 @@ def apply_coupons(cart, coupons)
   cart_w_coupon=[]
   remainder_item={}
   coupon_item={}
-  #binding.pry
+  binding.pry
   
-  end
   
 end
 
