@@ -15,31 +15,32 @@ def apply_coupons(cart, coupons)
   end
   cart.each do |line_item|
 
-    saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
-    if saving != nil
-      #binding.pry
-      if line_item[:count] % saving[:num] == 0
+      saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
+      if saving != nil
+        #binding.pry
+        if line_item[:count] % saving[:num] == 0
 
-        coupon_item=line_item.clone
-        coupon_item[:item] = coupon_item[:item] + " W/COUPON"
-        coupon_item[:price] = saving[:cost]/saving[:num]
-        line_item[:count]=0
-        cart << coupon_item
+          coupon_item=line_item.clone
+          coupon_item[:item] = coupon_item[:item] + " W/COUPON"
+          coupon_item[:price] = saving[:cost]/saving[:num]
+          line_item[:count]=0
+          cart << coupon_item
 
-        elsif line_item[:count] > saving[:num]
+          elsif line_item[:count] > saving[:num]
 
-        coupon_item=line_item.clone
-        coupon_item[:item] = coupon_item[:item] + " W/COUPON"
-        coupon_item[:price] = saving[:cost]/saving[:num]
+          coupon_item=line_item.clone
+          coupon_item[:item] = coupon_item[:item] + " W/COUPON"
+          coupon_item[:price] = saving[:cost]/saving[:num]
+  
+          coupon_item[:count]=line_item[:count]/saving[:num]*saving[:num]
+  
+          line_item[:count]=line_item[:count]-coupon_item[:count]
+         cart << coupon_item
 
-        coupon_item[:count]=line_item[:count]/saving[:num]*saving[:num]
-
-        line_item[:count]=line_item[:count]-coupon_item[:count]
-        cart << coupon_item
-
-      end
-    end
-  end
+       end
+     end
+   end
+end
   cart
 end
 
