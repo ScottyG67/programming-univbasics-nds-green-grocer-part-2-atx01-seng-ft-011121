@@ -10,6 +10,9 @@ def apply_coupons(cart, coupons)
   remainder_item={}
   coupon_item={}
   #binding.pry
+  if coupons == []
+    break
+  end
   cart.each do |line_item|
     #find matching coupons
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
