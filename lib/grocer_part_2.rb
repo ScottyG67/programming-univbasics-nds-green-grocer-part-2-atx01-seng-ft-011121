@@ -14,10 +14,11 @@ def apply_coupons(cart, coupons)
     binding.pry
   end
   cart.each do |line_item|
-    #find matching coupons
+
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
-    #binding.pry
-    #if cart meets number requirement for coupon
+    if saving == []
+      binding.pry
+    end
     if line_item[:count] % saving[:num] == 0
 
       coupon_item=line_item.clone
