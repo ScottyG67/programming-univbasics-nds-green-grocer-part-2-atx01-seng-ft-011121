@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
       #add new hash to cart with :item + "W/COUPON" and new per unit price
       #binding.pry
       coupon_item=line_item.clone
-      b#inding.pry
+      #binding.pry
       coupon_item[:item] = coupon_item[:item] + " W/COUPON"
       coupon_item[:price] = saving[:price]/saving[:num]
       binding.pry
