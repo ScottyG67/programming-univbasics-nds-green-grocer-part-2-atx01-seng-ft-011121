@@ -9,19 +9,20 @@ def apply_coupons(cart, coupons)
   cart_w_coupon=[]
   remainder_item={}
   coupon_item={}
-  binding.pry
+  #binding.pry
   cart.each do |line_item|
     #find matching coupons
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
-    binding.pry
+    #binding.pry
     #if cart meets number requirement for coupon
     if line_item[:count] % saving[:num] == 0
       #update line_item count = 0
       #add new hash to cart with :item + "W/COUPON" and new per unit price
-      binding.pry
+      #binding.pry
       coupon_item=line_item.clone
-      binding.pry
-      coupon_item[:item] = coupon_item[:item] + "W/COUPON"
+      b#inding.pry
+      coupon_item[:item] = coupon_item[:item] + " W/COUPON"
+      coupon_item[:price] = saving[:price]/saving[:num]
       binding.pry
       line_item[:count]=0
       binding.pry
