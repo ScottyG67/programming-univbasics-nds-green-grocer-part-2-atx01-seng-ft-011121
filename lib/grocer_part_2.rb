@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
 
         coupon_item[:count]=line_item[:count]/saving[:num]*saving[:num]
 
-        line_item[:count]=line_item[count]-coupon_item[:count]
+        line_item[:count]=line_item[:count]-coupon_item[:count]
         cart << coupon_item
 
       end
