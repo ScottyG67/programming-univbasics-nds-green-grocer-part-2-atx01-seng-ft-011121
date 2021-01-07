@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
 
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
     if saving != nil
-      binding.pry
+      #binding.pry
       if line_item[:count] % saving[:num] == 0
 
         coupon_item=line_item.clone
