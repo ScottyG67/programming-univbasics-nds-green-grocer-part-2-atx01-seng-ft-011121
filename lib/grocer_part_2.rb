@@ -11,8 +11,14 @@ def apply_coupons(cart, coupons)
   coupon_item={}
   binding.pry
   cart.each do |line_item|
+    #find matching coupons
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
     binding.pry
+    #if cart meets number requirement for coupon
+    if line_item[:count] >= saving[:num]
+      #if exact
+      if line_item
+    
   end
   
 end
