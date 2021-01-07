@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
       #update line_item count = count - num
       #add new hash to cart with :item + "W/COUPON" and new per unit price and num
       #note: Need to add case when count is more than 2X num but not evan multiple
-      binding.pry
+      #binding.pry
     end
   end
   
