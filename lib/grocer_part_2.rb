@@ -15,7 +15,7 @@ def apply_coupons(cart, coupons)
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
     binding.pry
     #if cart meets number requirement for coupon
-    if line_item[:count] = saving[:num]
+    if line_item[:count] % saving[:num] == 0
       #update line_item count = 0
       #add new hash to cart with :item + "W/COUPON" and new per unit price
       elsif line_item[:count] > saving[:num]
