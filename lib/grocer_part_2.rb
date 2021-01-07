@@ -11,7 +11,7 @@ def apply_coupons(cart, coupons)
   coupon_item={}
   #binding.pry
   if coupons == []
-    break
+    binding.pry
   end
   cart.each do |line_item|
     #find matching coupons
