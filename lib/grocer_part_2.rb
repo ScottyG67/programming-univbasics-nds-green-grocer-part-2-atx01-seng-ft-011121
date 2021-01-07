@@ -11,7 +11,8 @@ def apply_coupons(cart, coupons)
   coupon_item={}
   binding.pry
   cart.each do |line_item|
-    coupons.find 
+    coupons.find {|coupon| line_item[:item]==coupon[:item]}
+    binding.pry
   end
   
 end
