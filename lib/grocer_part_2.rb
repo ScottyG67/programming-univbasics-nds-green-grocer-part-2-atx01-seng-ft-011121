@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
       coupon_item[:price] = saving[:cost]/saving[:num]
       line_item[:count]=0
       cart << coupon_item
-      
+      binding.pry
       elsif line_item[:count] > saving[:num]
       #update line_item count = count - num
       #add new hash to cart with :item + "W/COUPON" and new per unit price and num
