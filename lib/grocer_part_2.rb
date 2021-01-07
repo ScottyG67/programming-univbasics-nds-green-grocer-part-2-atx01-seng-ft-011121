@@ -15,9 +15,11 @@ def apply_coupons(cart, coupons)
     saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
     binding.pry
     #if cart meets number requirement for coupon
-    if line_item[:count] >= saving[:num]
-      #if exact
-      if line_item
+    if line_item[:count] = saving[:num]
+      #update line_item count
+      #add new hash to cart with :item + "w"
+      elsif line_item[:count] > saving[:num]
+      #
     
   end
   
