@@ -10,14 +10,14 @@ def apply_coupons(cart, coupons)
   remainder_item={}
   coupon_item={}
   #binding.pry
-  if coupons == []
-    binding.pry
-  end
-  cart.each do |line_item|
+  if coupons != []
+    
+    cart.each do |line_item|
 
       saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
+      
       if saving != nil
-        #binding.pry
+        
         if line_item[:count] % saving[:num] == 0
 
           coupon_item=line_item.clone
@@ -35,12 +35,12 @@ def apply_coupons(cart, coupons)
           coupon_item[:count]=line_item[:count]/saving[:num]*saving[:num]
   
           line_item[:count]=line_item[:count]-coupon_item[:count]
-         cart << coupon_item
+          cart << coupon_item
 
-       end
-     end
-   end
-end
+        end
+      end
+    end
+  end
   cart
 end
 
