@@ -76,7 +76,7 @@ def checkout(cart, coupons)
   
   total = consolidated_with_disscounts_cart.sum { |item| item[:price]*item[:count]}
   if total > 100
-    total=(total*.9).round(2)
+    total=(total*0.9).round(2)
   end
   total
 end
