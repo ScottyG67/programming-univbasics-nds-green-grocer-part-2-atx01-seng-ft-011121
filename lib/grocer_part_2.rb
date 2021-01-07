@@ -10,8 +10,8 @@ def apply_coupons(cart, coupons)
   remainder_item={}
   coupon_item={}
   binding.pry
-  cart.each do |purchase|
-    binding.pry
+  cart.each do |line_item|
+    coupons.find 
   end
   
 end
