@@ -7,17 +7,15 @@ def apply_coupons(cart, coupons)
   
   require 'pry'
 
-  #coupon_item={}
-
-  if coupons != []
+  if coupons != [] #test if there are any coupons
     
     cart.each do |line_item|
 
-      saving=coupons.find {|coupon| line_item[:item]==coupon[:item]}
+      saving=coupons.find {|coupon| line_item[:item]==coupon[:item]} #find any matching coupons to current item
       
-      if saving != nil
+      if saving != nil #if no matching coupons, skip to next item in cart
         
-        if line_item[:count] % saving[:num] == 0
+        if line_item[:count] % saving[:num] == 0 #if item in cart exact multiple of coupon number requirement
 
           coupon_item=line_item.clone
           coupon_item[:item] = coupon_item[:item] + " W/COUPON"
@@ -25,7 +23,7 @@ def apply_coupons(cart, coupons)
           line_item[:count]=0
           cart << coupon_item
 
-          elsif line_item[:count] > saving[:num]
+          elsif line_item[:count] > saving[:num] #if item in cart > coupon requirement but not exact multiple 
 
           coupon_item=line_item.clone
           coupon_item[:item] = coupon_item[:item] + " W/COUPON"
@@ -47,6 +45,10 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
+  cart.each do |line_item|
+    
+  
 end
 
 def checkout(cart, coupons)
